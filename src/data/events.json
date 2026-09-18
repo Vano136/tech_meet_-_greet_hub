@@ -1,0 +1,26 @@
+[
+  {
+    "id": 201,
+    "title": "AI ^& Future Hackathon",
+    "category": "????????",
+    "city": "??????",
+    "date": "2026-05-01",
+    "price": 0
+  },
+  {
+    "id": 202,
+    "title": "Full-Stack Web Dev Bootcamp",
+    "category": "????????",
+    "city": "???????",
+    "date": "2026-05-10",
+    "price": 50
+  },
+  {
+    "id": 203,
+    "title": "Cybersecurity ^& Ethical Hacking",
+    "category": "???????????",
+    "city": "??????",
+    "date": "2026-05-20",
+    "price": 80
+  }
+]
