@@ -1,0 +1,1 @@
+import React from "react"; export default function App() { return (<div style={{ padding: "40px", textAlign: "center", fontFamily: "sans-serif" }}><h1>Tech Meet & Greet Hub ??</h1><p>????? ?????????? ??????!</p></div>); }
