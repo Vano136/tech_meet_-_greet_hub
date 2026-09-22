@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "title": "AI და ვებ დეველოპმენტის ჰაკათონი",
+    "category": "ჰაკათონი",
+    "city": "თბილისი",
+    "date": "2026-10-15",
+    "price": 0,
+    "format": "ადგილზე",
+    "image": ""
+  },
+  {
+    "id": 2,
+    "title": "React-ის პრაქტიკული მასტერკლასი",
+    "category": "ვორქშოფი",
+    "city": "ბათუმი",
+    "date": "2026-10-20",
+    "price": 25,
+    "format": "ონლაინ",
+    "image": ""
+  },
+  {
+    "id": 3,
+    "title": "ტექნოლოგიების მომავლის კონფერენცია",
+    "category": "კონფერენცია",
+    "city": "ქუთაისი",
+    "date": "2026-11-05",
+    "price": 50,
+    "format": "ჰიბრიდული",
+    "image": "https://images.unsplash.com/photo-1475721025505-23126fbb1e60?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "id": 4,
+    "title": "Python მონაცემთა მეცნიერებისთვის",
+    "category": "ვორქშოფი",
+    "city": "თბილისი",
+    "date": "2026-11-12",
+    "price": 35,
+    "format": "ადგილზე",
+    "image": ""
+  },
+  {
+    "id": 5,
+    "title": "მწვანე ტექნოლოგიების ჰაკათონი",
+    "category": "ჰაკათონი",
+    "city": "რუსთავი",
+    "date": "2026-11-21",
+    "price": 15,
+    "format": "ჰიბრიდული",
+    "image": "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "id": 6,
+    "title": "ციფრული პროდუქტების დიზაინის ფორუმი",
+    "category": "კონფერენცია",
+    "city": "ბათუმი",
+    "date": "2026-12-03",
+    "price": 70,
+    "format": "ჰიბრიდული",
+    "image": ""
+  },
+  {
+    "id": 7,
+    "title": "Frontend ინჟინერიის ლაბორატორია",
+    "category": "ვორქშოფი",
+    "city": "თბილისი",
+    "date": "2026-12-10",
+    "price": 40,
+    "format": "ონლაინ",
+    "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "id": 8,
+    "title": "კიბერუსაფრთხოების ეროვნული ჰაკათონი",
+    "category": "ჰაკათონი",
+    "city": "ქუთაისი",
+    "date": "2026-12-18",
+    "price": 20,
+    "format": "ადგილზე",
+    "image": ""
+  },
+  {
+    "id": 9,
+    "title": "საქართველოს ტექნოლოგიური სამიტი",
+    "category": "კონფერენცია",
+    "city": "თბილისი",
+    "date": "2027-01-15",
+    "price": 90,
+    "format": "ჰიბრიდული",
+    "image": "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=800&q=80"
+  }
+]
