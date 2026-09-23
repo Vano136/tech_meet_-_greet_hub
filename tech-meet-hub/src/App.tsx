@@ -2011,12 +2011,12 @@ export default function App() {
                   
                   {/* Rethink Preview */}
                   <div style={{ position: "relative", backgroundColor: "var(--bg-card)", border: "1px solid var(--border-color)", borderRadius: "16px", width: "260px", height: "120px", overflow: "hidden", boxShadow: "0 10px 25px rgba(0,0,0,0.1)", display: "flex", alignItems: "center", justifyContent: "center", padding: "20px" }}>
-                    <img src="/image_cc07fd.png" alt="Rethink Innovation Center" style={{ maxWidth: "100%", maxHeight: "100%", filter: "blur(8px)", userSelect: "none", opacity: 0.85 }} />
+                    <img src="/image_a9d882.png" alt="Rethink Innovation Center" style={{ maxWidth: "100%", maxHeight: "100%", filter: "blur(8px)", userSelect: "none", opacity: 0.85 }} />
                   </div>
 
                   {/* CDC Preview */}
                   <div style={{ position: "relative", backgroundColor: "var(--bg-card)", border: "1px solid var(--border-color)", borderRadius: "16px", width: "260px", height: "120px", overflow: "hidden", boxShadow: "0 10px 25px rgba(0,0,0,0.1)", display: "flex", alignItems: "center", justifyContent: "center", padding: "20px" }}>
-                    <img src="/image_cc07f9.jpg" alt="Center of Digital Careers" style={{ maxWidth: "100%", maxHeight: "100%", filter: "blur(8px)", userSelect: "none", opacity: 0.85 }} />
+                    <img src="/image_a9d4c9.jpg" alt="Center of Digital Careers" style={{ maxWidth: "100%", maxHeight: "100%", filter: "blur(8px)", userSelect: "none", opacity: 0.85 }} />
                   </div>
 
                 </div>
