@@ -194,6 +194,8 @@ export const FilterBar: React.FC<FilterBarProps> = ({
           <option value="ვორქშოფი">ვორქშოფი</option>
           <option value="ჰაკათონი">ჰაკათონი</option>
           <option value="კონფერენცია">კონფერენცია</option>
+          {/* 🔹 დამატებულია ბანაკი */}
+          <option value="ბანაკი">ბანაკი</option>
         </select>
 
         <select className="filter-select" value={format} onChange={(e) => setFormat(e.target.value)} style={{ flex: "1 1 150px" }}>

@@ -18,6 +18,88 @@ interface AIAgentWidgetProps {
   isProUser: boolean;
 }
 
+// 🔹 დახვეწილი ვექტორული რობოტის აიკონი AI-სთვის
+const RobotIcon: React.FC<{ size?: number }> = ({ size = 28 }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 100 100"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      style={{
+        filter: "drop-shadow(0 2px 6px rgba(56, 189, 248, 0.45))",
+        flexShrink: 0,
+      }}
+    >
+      <defs>
+        <linearGradient id="aiAntennaGrad" x1="50" y1="6" x2="50" y2="24" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#f43f5e" />
+          <stop offset="1" stopColor="#e11d48" />
+        </linearGradient>
+
+        <linearGradient id="aiHeadBorderGrad" x1="20" y1="20" x2="80" y2="65" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#38bdf8" />
+          <stop offset="1" stopColor="#2563eb" />
+        </linearGradient>
+
+        <linearGradient id="aiScreenGrad" x1="26" y1="26" x2="74" y2="60" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#090d16" />
+          <stop offset="1" stopColor="#0f172a" />
+        </linearGradient>
+
+        <linearGradient id="aiBodyGrad" x1="32" y1="68" x2="68" y2="92" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#6366f1" />
+          <stop offset="1" stopColor="#4338ca" />
+        </linearGradient>
+
+        <linearGradient id="aiEarGrad" x1="0" y1="0" x2="1" y2="1">
+          <stop stopColor="#64748b" />
+          <stop offset="1" stopColor="#334155" />
+        </linearGradient>
+      </defs>
+
+      {/* ანტენა */}
+      <rect x="47.5" y="15" width="5" height="10" rx="2.5" fill="#94a3b8" />
+      <circle cx="50" cy="11" r="6" fill="url(#aiAntennaGrad)" />
+      <circle cx="48" cy="9" r="2" fill="#ffe4e6" opacity="0.8" />
+
+      {/* ყურები */}
+      <rect x="12" y="34" width="7" height="16" rx="3.5" fill="url(#aiEarGrad)" />
+      <rect x="81" y="34" width="7" height="16" rx="3.5" fill="url(#aiEarGrad)" />
+
+      {/* თავის კორპუსი */}
+      <rect x="18" y="22" width="64" height="42" rx="14" fill="url(#aiHeadBorderGrad)" />
+      
+      {/* ეკრანი */}
+      <rect x="25" y="27" width="50" height="32" rx="9" fill="url(#aiScreenGrad)" stroke="#1e293b" strokeWidth="1.5" />
+
+      {/* თვალები */}
+      <circle cx="39" cy="40" r="5.5" fill="#38bdf8" />
+      <circle cx="37.5" cy="38" r="1.8" fill="#ffffff" />
+      <circle cx="61" cy="40" r="5.5" fill="#38bdf8" />
+      <circle cx="59.5" cy="38" r="1.8" fill="#ffffff" />
+
+      {/* ღაწვები */}
+      <circle cx="32" cy="48" r="3" fill="#f43f5e" opacity="0.8" />
+      <circle cx="68" cy="48" r="3" fill="#f43f5e" opacity="0.8" />
+
+      {/* ღიმილი */}
+      <path d="M44 48C47 52 53 52 56 48" stroke="#4ade80" strokeWidth="2.5" strokeLinecap="round" />
+
+      {/* ყელი */}
+      <rect x="45" y="64" width="10" height="4" rx="2" fill="#64748b" />
+
+      {/* სხეული */}
+      <rect x="32" y="68" width="36" height="24" rx="9" fill="url(#aiBodyGrad)" stroke="#818cf8" strokeWidth="1.2" />
+
+      {/* ბირთვი */}
+      <circle cx="50" cy="80" r="4.5" fill="#38bdf8" />
+      <circle cx="50" cy="80" r="2" fill="#ffffff" />
+    </svg>
+  );
+};
+
 export const AIAgentWidget: React.FC<AIAgentWidgetProps> = ({
   events = [],
   dbEvents = [],
@@ -37,8 +119,6 @@ export const AIAgentWidget: React.FC<AIAgentWidgetProps> = ({
   const [isLoading, setIsLoading] = useState(false);
 
   const chatBottomRef = useRef<HTMLDivElement | null>(null);
-
-  // გაერთიანებული ივენთების სია
   const allEvents = dbEvents.length > 0 ? dbEvents : events;
 
   useEffect(() => {
@@ -47,7 +127,6 @@ export const AIAgentWidget: React.FC<AIAgentWidgetProps> = ({
     }
   }, [messages, isOpen]);
 
-  // დამზღვევი ჭკვიანი პასუხი, თუ Google-ის API-სთან კავშირი შეფერხდა
   const getSmartFallbackResponse = (userText: string): string => {
     const q = userText.toLowerCase();
 
@@ -151,7 +230,6 @@ ${JSON.stringify(allEvents.map((ev) => ({ title: ev.title, category: ev.category
       }
     } catch (error) {
       console.warn("Gemini REST API fallback activated:", error);
-      // შეცდომის ჩვენების ნაცვლად მომენტალურად ერთვება ჭკვიანი ასისტენტი
       setMessages((prev) => [...prev, { sender: "ai", text: getSmartFallbackResponse(userMsg) }]);
     } finally {
       setIsLoading(false);
@@ -251,29 +329,18 @@ ${JSON.stringify(allEvents.map((ev) => ({ title: ev.title, category: ev.category
             <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
               <div
                 style={{
-                  width: "32px",
-                  height: "32px",
+                  width: "38px",
+                  height: "38px",
                   borderRadius: "50%",
-                  background: "linear-gradient(135deg, #38bdf8, #6366f1)",
+                  background: "linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(99, 102, 241, 0.25))",
+                  border: "1px solid rgba(56, 189, 248, 0.4)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                 }}
               >
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#fff"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M12 2a10 10 0 1 0 10 10H12V2z"></path>
-                  <path d="M12 12L2.1 12a10 10 0 0 1 9.9-10v10z"></path>
-                  <path d="M12 12v9.9a10 10 0 0 1-9.9-9.9H12z"></path>
-                </svg>
+                {/* 🔹 რობოტის აიკონი ჩათის ჰედერში */}
+                <RobotIcon size={26} />
               </div>
               <div>
                 <h4
@@ -390,38 +457,34 @@ ${JSON.stringify(allEvents.map((ev) => ({ title: ev.title, category: ev.category
         </div>
       )}
 
-      {/* Floating Toggle Button */}
+      {/* 🔹 Floating Toggle Button რობოტის აიკონით */}
       <button
         onClick={() => {
           setIsOpen(!isOpen);
         }}
         style={{
-          width: "60px",
-          height: "60px",
+          width: "62px",
+          height: "62px",
           borderRadius: "50%",
-          background: "linear-gradient(135deg, #38bdf8, #6366f1)",
-          border: "none",
-          color: "#fff",
+          background: "linear-gradient(135deg, #0ea5e9, #6366f1)",
+          border: "2px solid rgba(255, 255, 255, 0.25)",
           cursor: "pointer",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          boxShadow: "0 8px 32px 0 rgba(56, 189, 248, 0.4)",
-          transition: "transform 0.2s ease",
+          boxShadow: "0 10px 30px 0 rgba(56, 189, 248, 0.45)",
+          transition: "transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease",
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.transform = "scale(1.08)";
+          e.currentTarget.style.boxShadow = "0 14px 35px 0 rgba(99, 102, 241, 0.6)";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = "scale(1)";
+          e.currentTarget.style.boxShadow = "0 10px 30px 0 rgba(56, 189, 248, 0.45)";
         }}
       >
-        <svg
-          width="28"
-          height="28"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#fff"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-        </svg>
+        <RobotIcon size={36} />
       </button>
     </div>
   );
